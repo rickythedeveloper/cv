@@ -5,7 +5,7 @@
 % License : MIT
 %------------------------
 
-\documentclass[letterpaper,10pt]{article}
+\documentclass[letterpaper,11pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -16,10 +16,9 @@
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
-\usepackage[english]{babel}
+\usepackage[UKenglish]{babel}
 \usepackage{tabularx}
 \input{glyphtounicode}
-
 
 %----------FONT OPTIONS----------
 % sans-serif
@@ -63,17 +62,21 @@
 %-------------------------
 % Custom commands
 \newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
+  \item\small{#1}
 }
 
-\newcommand{\experienceItemHeading}[3]{
-  \vspace{-2pt}
-  \item
-  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-    \textbf{#1} $|$ #3 & \textbf{#2}
-  \end{tabular*}\vspace{-7pt}
+\newcommand{\experienceItem}[5]{
+  \item 
+  \begin{minipage}[t]{0.75\textwidth}
+    \textbf{#1} $|$ #2 #5
+  \end{minipage}
+  \begin{minipage}[t]{0.2\textwidth}
+    \begin{flushright}
+      % \textbf{#3}\\
+      #3\\
+      #4
+    \end{flushright}
+  \end{minipage}
 }
 
 \newcommand{\educationItem}[4]{
@@ -103,9 +106,9 @@
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, itemsep=7pt]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[noitemsep,topsep=0pt]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 
@@ -130,76 +133,94 @@
     \small{\item{
      \textbf{Languages}{: TypeScript, Kotlin, Swift, C++, C, Python, SQL, HTML, CSS, PHP} \\
      \textbf{Frameworks}{: Next.js, React, React Native, Kotlin Multiplatform, Node.js, Expo, Playwright} \\
-     \textbf{Developer Tools}{: AWS, Docker, Supabase, PostgreSQL, Git, Kibana}
+     \textbf{Developer Tools}{: AWS, Docker, Supabase, PostgreSQL, Git, Kibana, IaC}
     }}
  \end{itemize}
 
 \section{Experience}
   \resumeSubHeadingListStart
-    \experienceItemHeading
+    \experienceItem
       {Software Developer}
+      {Softwire}
 			{Sep. 2022 -- Present}
-      {Softwire}
-    \resumeItemListStart
-      \resumeItem{Directed a team of four developers in revamping a London food bank website to be used by the food bank volunteers; Streamlined local database configuration and implemented CI/CD pipelines to automate database migrations to two deployed environments, cutting deployment time by 50\%; Facilitated meetings within the team and the project stakeholder to scope pieces of work; Configured AWS CloudWatch using infrastructure as code to monitor website health.}
-      \resumeItem{Line managed two developers and oversaw their training process.}
-			\resumeItem{Taken ownership of the pro-bono mobile app development for a Black history charity organisation. As this project is not billable, it has honed my ability to effectively prioritise tasks and manage client expectations.}
-			\resumeItem{Contributed to the maintenance of LNER’s website and award-winning app. I have been nominated for an Individual Outcome Award for my work on a mobile app project, where I spearheaded the development of a new ticket type which has now been rolled out to production.}
-      \resumeItem{Received an Individual Outcome Award on my first project for a financial asset management firm, where I developed a template system for Alteryx which sped up the development process by 20 times.}
-    \resumeItemListEnd
+      {London}
+      {
+        \resumeItemListStart
+          \resumeItem{Directed a team of four developers in revamping a London food bank website to be used by the food bank volunteers; Implemented local database configuration and CI/CD pipelines to automate database migrations to two deployed environments, cutting deployment time by 50\%; Configured AWS CloudWatch using Infrastructure as Code to log website events and monitor website health; Facilitated meetings within the team and the project stakeholders to scope pieces of work.}
+          \resumeItem{Line-managed two junior developers and led their initial training process.}
+          \resumeItem{Taken ownership of the pro bono mobile app development for a charity organisation focusing on Black history education for children; Identified tasks required for the first release whilst managing client expectations the project is not billable.}
+          \resumeItem{Contributed to the maintenance of LNER’s website and award-winning app; Spearheaded the development of a new ticket type which has been rolled out to production, for which I have been nominated for an Individual Outcome Award.}
+          \resumeItem{Received an Individual Outcome Award on my first project for a financial asset management firm, where I developed a template system for Alteryx which sped up the development process by 20 times.}
+          \resumeItem{Mentored three GCSE students during their work experience, building a rudimentary Tetris web application.}
+        \resumeItemListEnd
+      }
 
-    \experienceItemHeading
+    \experienceItem
       {Software Developer Intern}
-      {Jun.\ 2021 -- Aug.\ 2021}
       {Softwire}
-    \resumeItemListStart
-      \resumeItem{Played a pivotal role in the development of the Black history app on a team of six, subsequently taking
-      ownership of the project after I joined the company as an employee.}
-    \resumeItemListEnd
+      {Jun.\ 2021 -- Aug.\ 2021}
+      {London, UK}
+      {
+        \resumeItemListStart
+          \resumeItem{Played a pivotal role in the development of the Black history app on a team of six, developing the app from the ground up and subsequently taking ownership of the project after I joined the company as an employee.}
+        \resumeItemListEnd
+      }
 
-    \experienceItemHeading
+    \experienceItem
       {Consultancy Intern}
-			{Jun. 2020 -- Sep. 2020}
       {Automation Consultants}
-    \resumeItemListStart
-      \resumeItem{Modularised essential components of the company’s WordPress website using HTML, CSS and PHP,
-      speeding the content editing process up by 10 times.}
-      \resumeItem{Developed a website performance checking script in Python.}
-    \resumeItemListEnd
+			{Jun. 2020 -- Sep. 2020}
+      {Reading, UK}
+      {
+        \resumeItemListStart
+          \resumeItem{Modularised essential components of the company’s WordPress website using HTML, CSS and PHP,
+          speeding the content editing process up by 10 times.}
+          \resumeItem{Developed a website performance assessment script in Python to help them improve their SEO.}
+        \resumeItemListEnd
+      }
 
-    \experienceItemHeading
+    \experienceItem
       {Consultancy Intern}
-			{Jun. 2019 -- Jul. 2019}
       {Mitsubishi Electric R\&D Centre Europe}
-    \resumeItemListStart
-      \resumeItem{Designed 3D models of the mechanical structure of a future railway passenger carriage using
-      Solidworks.}
-      \resumeItem{Developed a C program to analyse the 3D data sets of computational fluid dynamic (CFD) simulation
-      results of temperature and air velocity to compute passenger comfort.}
-    \resumeItemListEnd
+			{Jun. 2019 -- Jul. 2019}
+      {Livingston, UK}
+      {
+        \resumeItemListStart
+          \resumeItem{Designed 3D models of the mechanical structure of a future railway passenger carriage using Solidworks.}
+          \resumeItem{Developed a C program to analyse the 3D data sets of simulation results of temperature and air velocity to compute passenger comfort and visualised the output using Paraview.}
+        \resumeItemListEnd
+      }
   \resumeSubHeadingListEnd
 
 \section{Education}
   \resumeSubHeadingListStart
-    \educationItem
+    \experienceItem
       {University of Cambridge}
-      {2018 -- 2022}
       {BA Hons \& MEng Engineering with a Merit}
+      {2018 -- 2022}
       {Cambridge, UK}
-    \resumeItemListStart
-      \resumeItem{Specialised in Information and Aerospace Engineering, including modules in Probabilistic Machine Learning, Deep Learning, Computer Vision, Information Theory and Fluid Mechanics.}
-    \resumeItemListEnd
+      {
+        \resumeItemListStart
+          \resumeItem{Specialised in Information and Aerospace Engineering, including modules in Probabilistic Machine Learning, Deep Learning, Computer Vision, Information Theory and Fluid Mechanics.}
+        \resumeItemListEnd
+      }
+    
   \resumeSubHeadingListEnd
 
   \section{Projects}
   \resumeSubHeadingListStart
-    \resumeProjectHeading
-        {\textbf{Pilot Community Website} $|$ Next.js, TypeScript, AWS, Supabase, Docker}{Jan. 2024 -- Present}
+    \experienceItem
+      {Pilot Community Website}
+      {Next.js, TypeScript, AWS, Supabase, Docker}
+      {Jan. 2024 -- Present}
+      {}
+      {
         \resumeItemListStart
           \resumeItem{Developing a full-stack web application to connect pilots across the country}
           \resumeItem{Created a password authentication flow using AWS Cognito}
           \resumeItem{Implemented a JWT authentication token in the backend to manage sessions}
         \resumeItemListEnd
+      } 
   \resumeSubHeadingListEnd
 
 % \section{Certifications}
